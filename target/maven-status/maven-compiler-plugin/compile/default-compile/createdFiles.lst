@@ -1,4 +1,5 @@
 ManejoTiquetes\ManejoCajas.class
+Configuracion\ConexionDB.class
 Configuracion\Login.class
 ManejoTiquetes\Cliente.class
 ManejoTiquetes\Nodo.class

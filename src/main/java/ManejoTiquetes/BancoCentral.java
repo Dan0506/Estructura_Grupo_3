@@ -14,9 +14,9 @@ public class BancoCentral {
     public static void main(String[] args) {
      
         //crear una cola de prioridad para manejar los tiquetes
-        ColaDePrioridad cola1 = new ColaDePrioridad();
-        ColaDePrioridad cola2 = new ColaDePrioridad();
-        ColaDePrioridad cola3 = new ColaDePrioridad();
+        ColaDePrioridad cola1 = new ColaDePrioridad(1);
+        ColaDePrioridad cola2 = new ColaDePrioridad(2);
+        ColaDePrioridad cola3 = new ColaDePrioridad(3);
         
         ManejoCajas mc = new ManejoCajas();
         mc.insertarCaja(cola1);
@@ -39,7 +39,6 @@ public class BancoCentral {
         while (!cola1.estaVacia()) {
             Tiquete atendido = cola1.atender();
             if (atendido != null) {
-                atendido.setHoraAtencion(LocalTime.now());
                 System.out.println("Cliente atendido: " + atendido);
             }
         }
@@ -47,6 +46,9 @@ public class BancoCentral {
         //Verificar si la cola está vacía
         System.out.println("\nEstado final de la cola:");
         mc.imprimirCajas();
+        
+        //reporte
+        mc.reporte();
     }
 }
 

@@ -9,6 +9,7 @@ package ManejoTiquetes;
  * @author Daniel Barrantes
  */
 import java.time.LocalTime;
+import java.time.Duration;
 
 public class Tiquete {
     private Cliente cliente;
@@ -48,6 +49,11 @@ public class Tiquete {
         this.horaAtencion = horaAtencion;
     }
 
+    public double getDuracion() {
+        Duration duration = Duration.between(this.horaCreacion, this.horaAtencion);
+        return duration.getSeconds();
+    }
+    
     @Override
     public String toString() {
         return "Tiquete:  " +
